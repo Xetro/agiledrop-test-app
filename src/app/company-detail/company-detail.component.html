@@ -1,1 +1,10 @@
-<p>company-detail works!</p>
+<div class="company-detail" *ngIf="dataSource$ | async as data; else loading">
+  <h1>{{data.company.title}}</h1>
+  <img src="" alt="" />
+  <p class="description">{{data.company.description}}</p>
+  <div class="location">
+    ICON
+    {{data.company.city}}
+  </div>
+  <app-events [events]="data.events"></app-events>
+</div>

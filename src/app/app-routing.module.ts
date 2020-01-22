@@ -15,7 +15,7 @@ const routes: Routes = [
     }
   },
   {
-    path: 'detail/:id',
+    path: 'companies/:id',
     component: CompanyDetailComponent,
     resolve: {
       data: CompanyDetailResolverService
