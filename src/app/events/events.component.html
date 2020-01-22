@@ -1,3 +1,7 @@
+<h1>events</h1>
+<h2>what we are up to</h2>
 <div *ngFor="let event of events">
-  {{ event | json }}
+  <p>{{event.title}}</p>
+  <p>{{event.event_date}}</p>
+  {{event.event_logo}}
 </div>
