@@ -1,23 +1,23 @@
 <h1>companies</h1>
 <h2>find your own</h2>
 
-<ul class="companies-list">
-  <li class="company-listing" *ngFor="let company of companies$ | async">
-      <div class="company-image">
-        <img src="" alt="">
+<div class="companies-list">
+  <div class="company-listing" *ngFor="let company of companies$ | async">
+    <div class="company-image">
+      <img [src]="imgUrlpath + company.logo" alt="">
+    </div>
+    <div class="company-content">
+      <div class="company-content__header">
+        <h3>{{company.title}}</h3>
+        <p class="accent">{{company.city}}</p>
       </div>
-      <div class="company-content">
-        <div class="company-content__header">
-          <h3>{{company.title}}</h3>
-          <p class="accent">{{company.city}}</p>
-        </div>
-        <div class="company-content__description">{{company.description}}</div>
-        <div class="company-content__button">
-            <a [routerLink]="['/companies', company.nid]">
-              <button>read more</button>
-            </a>
-        </div>
+      <div class="company-content__description">{{company.description}}</div>
+      <div class="company-content__button">
+          <a [routerLink]="['/companies', company.nid]">
+            <button>read more</button>
+          </a>
       </div>
-    </li>
-</ul>
+    </div>
+  </div>
+</div>
 

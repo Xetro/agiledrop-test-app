@@ -9,7 +9,7 @@ import { map, tap } from 'rxjs/operators';
   styleUrls: ['./companies-list.component.scss']
 })
 export class CompaniesListComponent implements OnInit {
-
+  imgUrlpath = 'http://angular-test-backend.dev2.agiledrop.com';
   companies$: Observable<any>;
 
   constructor(

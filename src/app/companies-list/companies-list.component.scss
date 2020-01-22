@@ -1,0 +1,99 @@
+h1,h2 {
+  text-transform: uppercase;
+  margin: 0
+}
+
+h1 {
+  font-size: 25px;
+}
+
+h2 {
+  font-size: 15px;
+}
+
+h3 {
+  font-size: 15px;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+button {
+  display: inline-block;
+  border: none;
+  border-radius: 30px;
+  padding: 8px 20px;
+  margin: 0;
+  text-decoration: none;
+  background: #29c1e1;
+  color: #ffffff;
+  font-family: sans-serif;
+  font-size: 12px;
+  cursor: pointer;
+  text-align: center;
+  transition: background 250ms ease-in-out, 
+              transform 150ms ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-transform: uppercase;
+}
+
+button:hover,
+button:focus {
+  background: #229eb8;
+}
+
+button:focus {
+  background: #125563;
+}
+
+button:active {
+  transform: scale(0.99);
+}
+
+:host {
+  padding: 0 20%;
+  display: block;
+}
+
+.accent {
+  color: #c10635;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.company-content {
+  > div {
+    padding-left: 15px;
+  }
+
+  &__header {
+    border-left: solid 2px #29c1e1;
+  }
+
+  &__description {
+    color: #55585f;
+    font-size: 12px;
+    margin: 20px 0;
+  }
+}
+
+.companies-list {
+  margin-top: 50px;
+}
+
+.company-listing {
+  display: flex;
+  margin-bottom: 80px;
+}
+
+.company-image {
+  margin-right: 30px;
+  margin-left: 30px;
+  img {
+    max-width: 90px;
+    height: auto;
+  }
+}
