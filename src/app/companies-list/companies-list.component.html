@@ -1,1 +1,23 @@
-<p>companies-list works!</p>
+<h1>companies</h1>
+<h2>find your own</h2>
+
+<ul class="companies-list">
+  <li class="company-listing" *ngFor="let company of companies$ | async">
+      <div class="company-image">
+        <img src="" alt="">
+      </div>
+      <div class="company-content">
+        <div class="company-content__header">
+          <h3>{{company.title}}</h3>
+          <p class="accent">{{company.city}}</p>
+        </div>
+        <div class="company-content__description">{{company.description}}</div>
+        <div class="company-content__button">
+            <a [routerLink]="['/detail', company.nid]">
+              <button>read more</button>
+            </a>
+        </div>
+      </div>
+    </li>
+</ul>
+
