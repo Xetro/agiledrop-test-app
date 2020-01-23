@@ -13,14 +13,14 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   getCompanies(): Observable<Company[]> {
-    return this.http.get<any>(environment.serverUrl + `/api/companies`);
+    return this.http.get<Company[]>(environment.serverUrl + `/api/companies`);
   }
 
   getCompany(id: string): Observable<Company> {
-    return this.http.get<any>(environment.serverUrl + `/api/companies/${id}`);
+    return this.http.get<Company>(environment.serverUrl + `/api/companies/${id}`);
   }
 
   getEvents(id: string): Observable<CompanyEvent[]> {
-    return this.http.get<any>(environment.serverUrl + `/api/companies/${id}/events`);
+    return this.http.get<CompanyEvent[]>(environment.serverUrl + `/api/companies/${id}/events`);
   }
 }
