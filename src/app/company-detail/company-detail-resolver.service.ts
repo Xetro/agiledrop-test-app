@@ -3,7 +3,9 @@ import { Router, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/ro
 
 import { ApiService } from '../api.service';
 import { Observable, of, EMPTY, forkJoin } from 'rxjs';
-import { take, mergeMap } from 'rxjs/operators';
+import { take, mergeMap, map } from 'rxjs/operators';
+
+import * as moment from 'moment';
 
 @Injectable({
   providedIn: 'root'
@@ -22,12 +24,26 @@ export class CompanyDetailResolverService {
       take(1),
       mergeMap(([company, events]) => {
         if (company && events) {
-          return of([company, events]);
+          return of([company, events]).pipe(map(this.mapData))
         } else {
           this.router.navigate(['/error-page']);
           return EMPTY;
         }
       })
     );
+  }
+
+  mapData([company, events]) {
+    events = events.map(event => {
+      event.event_date = moment(event.event_date, 'ddd, MM/DD/YYYY - HH:mm').toDate();
+      return event;
+    });
+
+    const data = {
+      company: company[0],
+      events,
+    };
+
+    return data
   }
 }

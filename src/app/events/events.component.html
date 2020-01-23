@@ -1,7 +1,9 @@
-<h1>events</h1>
-<h2>what we are up to</h2>
+<div class="header">
+  <h1>events</h1>
+  <h2>what we are up to</h2>
+</div>
 <div *ngFor="let event of events">
-  <p>{{event.title}}</p>
-  <p>{{event.event_date}}</p>
-  {{event.event_logo}}
+  <p class="title">{{event.title}}</p>
+  <p class="date">{{event.event_date | date:'dd. MMM yyyy' }} at {{event.event_date | date:'HH:mm' }}</p>
+  <img [src]="imgUrlpath + event.event_logo">
 </div>

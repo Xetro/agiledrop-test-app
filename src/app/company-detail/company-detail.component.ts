@@ -18,8 +18,7 @@ export class CompanyDetailComponent implements OnInit {
 
   ngOnInit() {
     this.dataSource$ = this.route.data.pipe(
-      tap(res => console.log(res)),
-      map((response) => ({company: response.data[0][0], events: response.data[1]}))
+      map((response) => response.data)
     );
   }
 
