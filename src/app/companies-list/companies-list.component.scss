@@ -75,3 +75,27 @@ button:active {
     height: auto;
   }
 }
+
+@media screen and (max-width: 1100px) {
+  :host {
+    padding: 0 10%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  :host {
+    padding: 0 5%;
+  }
+
+  .company-listing {
+    flex-direction: column;
+  }
+
+  .companies-list {
+    margin-top: 25px;
+  }
+
+  .company-content__header {
+    margin-top: 15px;
+  }
+}

@@ -8,7 +8,9 @@
     </div>
     <div class="company-content">
       <div class="company-content__header">
-        <h3>{{company.title}}</h3>
+        <a [routerLink]="['/companies', company.nid]">
+          <h3>{{company.title}}</h3>
+        </a>
         <p class="accent">{{company.city}}</p>
       </div>
       <div class="company-content__description">{{company.description}}</div>
