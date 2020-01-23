@@ -1,10 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
-import { map, tap } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 
-import { environment } from '../../environments/environment'
+import { environment } from '../../environments/environment';
 
+export interface Company {
+  nid: string;
+  description: string;
+  logo: string;
+  title: string;
+}
 
 @Component({
   selector: 'app-companies-list',
@@ -13,16 +19,14 @@ import { environment } from '../../environments/environment'
 })
 export class CompaniesListComponent implements OnInit {
   imgUrlpath = environment.serverUrl;
-  companies$: Observable<any>;
+  companies$: Observable<Company>;
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router
   ) { }
 
   ngOnInit() {
     this.companies$ = this.route.data.pipe(
-      tap(res => console.log(res)),
       map((response) => response.data)
     );
   }

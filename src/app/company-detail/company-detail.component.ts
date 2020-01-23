@@ -3,7 +3,8 @@ import { Observable } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 import { tap, map } from 'rxjs/operators';
 
-import { environment } from '../../environments/environment'
+import { environment } from '../../environments/environment';
+import { DetailResponse } from './company-detail-resolver.service';
 
 @Component({
   selector: 'app-company-detail',
@@ -12,7 +13,7 @@ import { environment } from '../../environments/environment'
 })
 export class CompanyDetailComponent implements OnInit {
   imgUrlpath = environment.serverUrl;
-  dataSource$: Observable<any>
+  dataSource$: Observable<DetailResponse>;
 
   constructor(private route: ActivatedRoute) { }
 

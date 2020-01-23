@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  serverUrl: "http://angular-test-backend.dev2.agiledrop.com"
+  serverUrl: 'http://angular-test-backend.dev2.agiledrop.com'
 };
 
 /*

@@ -1,7 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { environment } from '../environments/environment'
+
+import { environment } from '../environments/environment';
+import { Company } from './companies-list/companies-list.component';
+import { CompanyEvent } from './events/events.component';
 
 @Injectable({
   providedIn: 'root'
@@ -9,15 +12,15 @@ import { environment } from '../environments/environment'
 export class ApiService {
   constructor(private http: HttpClient) { }
 
-  getCompanies(): Observable<any> {
+  getCompanies(): Observable<Company[]> {
     return this.http.get<any>(environment.serverUrl + `/api/companies`);
   }
 
-  getCompany(id: string): Observable<any> {
+  getCompany(id: string): Observable<Company> {
     return this.http.get<any>(environment.serverUrl + `/api/companies/${id}`);
   }
 
-  getEvents(id: string): Observable<any> {
+  getEvents(id: string): Observable<CompanyEvent[]> {
     return this.http.get<any>(environment.serverUrl + `/api/companies/${id}/events`);
   }
 }
