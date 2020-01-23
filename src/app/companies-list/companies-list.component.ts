@@ -3,13 +3,16 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 
+import { environment } from '../../environments/environment'
+
+
 @Component({
   selector: 'app-companies-list',
   templateUrl: './companies-list.component.html',
   styleUrls: ['./companies-list.component.scss']
 })
 export class CompaniesListComponent implements OnInit {
-  imgUrlpath = 'http://angular-test-backend.dev2.agiledrop.com';
+  imgUrlpath = environment.serverUrl;
   companies$: Observable<any>;
 
   constructor(

@@ -1,10 +1,16 @@
-<div class="company-detail" *ngIf="dataSource$ | async as data; else loading">
-  <h1>{{data.company.title}}</h1>
-  <img src="" alt="" />
-  <p class="description">{{data.company.description}}</p>
-  <div class="location">
-    ICON
-    {{data.company.city}}
+<div class="wrapper" *ngIf="dataSource$ | async as data; else loading">
+  <div class="company-detail">
+    <h1>{{data.company.title}}</h1>
+    <div class="content">
+      <div>
+        <img [src]="imgUrlpath + data.company.logo" alt="">
+      </div>
+      <p class="description">{{data.company.description}}</p>
+    </div>
+    <div class="location">
+      <div class="location__pin"></div>
+      <p class="location__city">{{data.company.city}}</p>
+    </div>
   </div>
   <app-events [events]="data.events"></app-events>
 </div>
